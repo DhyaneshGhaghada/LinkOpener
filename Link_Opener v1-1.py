@@ -1,0 +1,21 @@
+import webbrowser
+from tkinter import *
+def getvals():
+    webbrowser.open(e1.get())
+    x = open("Linkopenerfilesave.txt", "a")
+    x.write(e1.get() + "-           ")
+    x.write(e2.get())
+    x.close()
+root = Tk()
+root.geometry("500x500")
+l1 = Label(root, text="Hello i am LinkOpener, You can load and save link at this software!!", font="comicsans 15 bold").pack()
+l2 = Label(root, text="Created by Dhyanesh Ghaghada", font="comicsans 14 bold").pack()
+e = StringVar()
+e1 = Entry(root, font="comicsans 10 bold", textvariable=e)
+e1.pack()
+ee = StringVar()
+l3 = Label(root, text="Keep an index of this link!!", font="comicsans 10 bold").pack()
+e2 = Entry(root, font="comicsans 10 bold", textvariable=ee)
+e2.pack()
+bu1 = Button(root, text="Submit", font="comicsans 10 bold", command=getvals).pack()
+root.mainloop()
